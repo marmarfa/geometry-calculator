@@ -1,0 +1,9 @@
+#17.	Удаление дубликатов Удалить повторяющиеся символы, сохранив порядок. "banana" -> "ban"
+x= "banana"
+y=""
+for i in range(len(x)):
+    y=x[0:i]+x[i+1:len(x)]
+    if (y.find(x[i])==-1): 
+        result=x[i]
+
+print(result) 
