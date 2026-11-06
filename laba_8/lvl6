@@ -1,0 +1,30 @@
+def find_uniq(arr):
+    a, b, c = arr[0], arr[1], arr[2]
+    if a == b or a == c:
+        majority = a
+    else:
+        majority = b
+        
+    for x in arr:
+        if x != majority:
+            return x
+
+if __name__ == "__main__":
+    print("Введите числа через запятую или пробел (например: 1, 1, 2, 1):")
+    user_input = input(" > ")
+    
+    user_input = user_input.replace(',', ' ')
+    parts = user_input.split()
+    
+    arr = []
+    for p in parts:
+        if '.' in p:
+            arr.append(float(p))
+        else:
+            arr.append(int(p))
+            
+    if len(arr) < 3:
+        print("Ошибка: нужно ввести минимум 3 числа.")
+    else:
+        result = find_uniq(arr)
+        print(f"Уникальное число: {result}")

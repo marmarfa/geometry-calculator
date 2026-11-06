@@ -1,0 +1,28 @@
+def cakes(recipe, available):
+    counts = []
+    
+    for item in recipe:
+        need = recipe[item]
+        
+        if item in available:
+            have = available[item]
+        else:
+            have = 0
+        
+        can_cook = have // need
+        counts.append(can_cook)
+        
+        print("Ингредиент:", item, "| Нужно:", need, "| Есть:", have, "| Тортов:", can_cook)
+    
+    result = min(counts)
+    print("Итого можно испечь:", result)
+    print()
+    
+    return result
+
+
+print("Первый пример:")
+cakes({"flour": 500, "sugar": 200, "eggs": 1}, {"flour": 1200, "sugar": 1200, "eggs": 5, "milk": 200})
+
+print("Второй пример:")
+cakes({"apples": 3, "flour": 300, "sugar": 150, "milk": 100, "oil": 100}, {"sugar": 500, "flour": 2000, "milk": 2000})
