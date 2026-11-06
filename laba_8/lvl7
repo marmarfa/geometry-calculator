@@ -1,0 +1,21 @@
+def filter_homogeneous_arrays(arrays):
+
+    filtered_arrays = []
+
+    for sub_array in arrays:
+
+        if sub_array:
+
+            element_types = {type(item) for item in sub_array}
+
+            if len(element_types) == 1:
+                filtered_arrays.append(sub_array)
+
+    return filtered_arrays
+
+
+
+input_arrays = [[1, 5, 4], ['a', 3, 5], ['b'], [], ['1', 2, 3]]
+result = filter_homogeneous_arrays(input_arrays)
+print(result)
+
